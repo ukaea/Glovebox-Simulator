@@ -1,0 +1,31 @@
+<sdf version='1.6'>
+    <model name="pedestal">
+    	 <link name="pedestal">
+		    <visual name="visual">
+		      <geometry>
+				<mesh>
+		            <uri>model://glovebox/meshes/Pedestal.stl</uri>
+		            <scale>0.01 0.01 0.01</scale>
+		        </mesh>
+		      </geometry>
+		      <material>
+		    <script>
+		      <uri>file://media/materials/scripts/gazebo.material</uri>
+		      <name>Gazebo/Metal</name>
+		    </script>
+		    <ambient>1 1 1 1</ambient>
+		      </material>
+		    </visual>
+		    <collision name="collision">
+		      <geometry>
+		        <mesh>
+		            <uri>model://glovebox/meshes/Pedestal.stl</uri>
+		            <scale>0.01 0.01 0.01</scale>
+		        </mesh>
+		      </geometry>
+		    </collision>
+	    </link>
+      <pose frame=''>0 0 -0.01 0 0 0</pose>
+      <static>true</static>
+     </model>
+</sdf>
