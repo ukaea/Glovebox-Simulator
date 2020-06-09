@@ -69,7 +69,7 @@ class ExampleInitializeGazeboRobot(object):
     # Home the robot
     print(self.group.get_current_pose())
 
-    self.group.set_named_target("vertical")
+    self.group.set_named_target("home")
     return self.group.go(wait=True)
 
 def main():
