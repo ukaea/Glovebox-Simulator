@@ -73,6 +73,8 @@ namespace gazebo {
 
         joint_name_ = _sdf->GetElement("joint")->Get<std::string>();
 
+	ROS_INFO("Loading MIMIC JOINTS - %s", joint_name_.c_str());
+
         // Check for mimicJoint element
         if (!_sdf->HasElement("mimicJoint")) {
             ROS_ERROR("No mimicJoint element present. MimicJointPlugin could not be loaded.");
@@ -176,6 +178,7 @@ namespace gazebo {
             }
             else {
 #if GAZEBO_MAJOR_VERSION >= 9
+		//ROS_INFO_STREAM("Angles - " << mimic_joint_name_ << " - " << angle);
                 mimic_joint_->SetPosition(0, angle, true);
 #elif GAZEBO_MAJOR_VERSION > 2
                 ROS_WARN_ONCE("The mimic_joint plugin is using the Joint::SetPosition method without preserving the link velocity.");

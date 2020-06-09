@@ -52,13 +52,11 @@ The launch can be parametrized with arguments :
 
 To launch it with default arguments, run the following command in a terminal : 
 
-`roslaunch kortex_gazebo spawn_kortex_robot.launch`
+`roslaunch kortex_gazebo spawn.launch`
 
 To launch it with optional arguments, specify the argument name, then ":=", then the value you want. For example, : 
 
-`roslaunch kortex_gazebo spawn_kortex_robot.launch start_rviz:=false x0:=1.0 y0:=2.55 use_trajectory_controller:=false`
-
-You can also have a look at the [roslaunch documentation](http://wiki.ros.org/roslaunch/Commandline%20Tools) for more details.
+`roslaunch kortex_gazebo spawn.launch start_rviz:=false use_trajectory_controller:=false`
 
 ## Contents
 

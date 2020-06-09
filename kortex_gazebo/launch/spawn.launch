@@ -77,24 +77,24 @@
             args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x0) -y $(arg y0) -z $(arg z0)
                 -robot_namespace $(arg robot_name)
                 -J joint_1 0
-                -J joint_2 0
-                -J joint_3 -1.57
-                -J joint_4 0
-                -J joint_5 1.57
-                -J joint_6 0
-                -J joint_7 1.57"  
+                -J joint_2 -1.0
+                -J joint_3 0
+                -J joint_4 1.0
+                -J joint_5 0
+                -J joint_6 1.0
+                -J joint_7 0"  
             if="$(eval not arg('gripper'))"/> <!--TODO-->
         <!-- With gripper -->
         <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
         args="-urdf -param robot_description -model $(arg robot_name) -x $(arg x0) -y $(arg y0) -z $(arg z0)
             -robot_namespace $(arg robot_name)
                 -J joint_1 0
-                -J joint_2 0
-                -J joint_3 -1.57
-                -J joint_4 0
-                -J joint_5 1.57
-                -J joint_6 0
-                -J joint_7 1.57" 
+                -J joint_2 -1.0
+                -J joint_3 0
+                -J joint_4 1.0
+                -J joint_5 0
+                -J joint_6 1.0
+                -J joint_7 0"  
         unless="$(eval not arg('gripper'))"/> <!--TODO-->
 
         <!-- Load controller configuration file from kortex_control package -->
