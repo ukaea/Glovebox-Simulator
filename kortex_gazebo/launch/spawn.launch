@@ -17,7 +17,7 @@
     <arg name="dof" default="6" if="$(eval arg('arm') == 'gen3_lite')"/> <!-- Number of degrees of freedom of the arm -->
     <arg name="vision" default="true"/> <!-- True if the arm has a Vision module -->
     <arg name="gripper" default="" />
-    <arg name="robot_name" default="my_$(arg arm)"/>
+    <arg name="robot_name" default="glovebox_left"/>
 
     <!-- Use trajectory controllers and MoveIt -->
     <arg name="use_trajectory_controller" default="true"/>
