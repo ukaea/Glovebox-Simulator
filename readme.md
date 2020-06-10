@@ -7,7 +7,7 @@ A [glovebox](https://en.wikipedia.org/wiki/Glovebox)is a sealed container that i
 One of the biggest risks to operates is the gloves breaking. In order to derisk human-like robots could be used to replace the direct arms in the glovebox.
 This can be through tele-operation or through autonomy.
 
-![Gazebo simulation](doc/gazebo.png)
+![Gazebo simulation](doc/gazebo.PNG)
 
 This repo provides a flexible simulation and development environment for controlling robotis in a glovebox to do representative tasks.
 This includes:
@@ -15,7 +15,7 @@ This includes:
 * A modified [Kinova](https://github.com/Kinovarobotics/ros_kortex) setup,
 * A [Moveit](https://moveit.ros.org/) configuration.
 
-![RViz Interface](doc/rviz.png)
+![RViz Interface](doc/rviz.PNG)
 
 ## Installation
 
