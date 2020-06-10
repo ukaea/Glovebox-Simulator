@@ -1,4 +1,21 @@
-# ros_kortex
+# Glovebox simulator
+
+## Introduction
+
+A [glovebox](https://en.wikipedia.org/wiki/Glovebox)is a sealed container that is designed to allow manipulation of objects where a separation from the object is desired. Built into the sides of the glovebox are gloves arranged in such a way that the user can place their hands into the gloves and perform tasks inside the box without breaking containment. Part or all of the box is usually transparent to allow the user to see what is being manipulated. Two types of gloveboxes exist. The first allows a person to work with hazardous substances, such as radioactive materials or infectious disease agents, and the second allows manipulation of substances that must be contained within a very high purity inert atmosphere, such as argon or nitrogen. 
+
+One of the biggest risks to operates is the gloves breaking. In order to derisk human-like robots could be used to replace the direct arms in the glovebox.
+This can be through tele-operation or through autonomy.
+
+![Gazebo simulation](doc/gazebo.png)
+
+This repo provides a flexible simulation and development environment for controlling robotis in a glovebox to do representative tasks.
+This includes:
+* A [Gazebo](http://gazebosim.org/) simulation of the environment,
+* A modified [Kinova](https://github.com/Kinovarobotics/ros_kortex) setup,
+* A [Moveit](https://moveit.ros.org/) configuration.
+
+![RViz Interface](doc/rviz.png)
 
 ## Installation
 
@@ -9,7 +26,6 @@
 This package has been tested under ROS Kinetic (Ubuntu 16.04) and ROS Melodic (Ubuntu 18.04).
 You can find the instructions to install ROS Kinetic [here](http://wiki.ros.org/kinetic/Installation/Ubuntu) and ROS Melodic [here](http://wiki.ros.org/melodic/Installation/Ubuntu).
 
-[Google Protocol Buffers](https://developers.google.com/protocol-buffers/) is used by Kinova to define the Kortex APIs and to automatically generate ROS messages, services and C++ classes from the Kortex API `.proto` files. The installation of Google Protocol Buffers is required by developers implementing new APIs with the robot. However, since we already provide all the necessary generated files on GitHub, this is not required for most end users of the robot.
 
 ### Build
 
@@ -39,12 +55,7 @@ The launch can be parametrized with arguments :
 - **start_gazebo** : If this argument is false, Gazebo will not be launched within this launched file. It is useful if you already launched Gazebo yourself and just want to spawn the robot. The default value is **true** (Gazebo will be started).
 - **gazebo_gui** : If this argument is false, only the Gazebo Server will be launched. The default value is **true**.
 - **start_rviz** : If this argument is true, RViz will be launched. The default value is **true**.
-- **x0** : The default X-axis position of the robot in Gazebo. The default value is **0.0**.
-- **y0** : The default Y-axis position of the robot in Gazebo. The default value is **0.0**.
-- **z0** : The default Z-axis position of the robot in Gazebo. The default value is **0.0**.
-- **arm** : Name of your robot arm model. See the `kortex_description/arms` folder to see the available robot models. The default value is **gen3**.
-- **gripper** : Name of your robot arm's tool / gripper. See the `kortex_description/grippers` folder to see the available end effector models (or to add your own). The default value is **""**. For Gen3, you can also put **robotiq_2f_85**. For Gen3 lite, you need to put **gen3_lite_2f**.
-- **robot_name** : This is the namespace of the arm that is going to be spawned. It defaults to **my_$(arg arm)** (so my_gen3 for arm="gen3").
+- **gripper** : Name of your robot arm's tool / gripper. See the `kortex_description/grippers` folder to see the available end effector models (or to add your own). The default value is **""**. For Gen3, you can also put **robotiq_2f_85**. 
 - **use_trajectory_controller** : If this argument is false, one `JointPositionController` per joint will be launched and the arm will offer a basic ROS Control interface to control every joint individually with topics. If this argument is true, a MoveIt! node will be started for the arm and the arm will offer a `FollowJointTrajectory` interface to control the arm (via a `JointTrajectoryController`). The default value is **true**.
 - **use_sim_time** : If this value is true, Gazebo will use simulated time instead of system clock. The default value is **true**.
 - **debug** : If this value is true, Gazebo will be launched in debug mode. This option is useful for debugging Gazebo-related issues that won't show in the terminal. The default value is **false**.
@@ -58,30 +69,9 @@ To launch it with optional arguments, specify the argument name, then ":=", then
 
 `roslaunch kortex_gazebo spawn.launch start_rviz:=false use_trajectory_controller:=false`
 
-## Contents
 
-The following is a description of the packages included in this repository.
 
-### kortex_control
-This package implements the simulation controllers that control the arm in Gazebo. For more details, please consult the [README](kortex_control/readme.md) from the package subdirectory.
+## Attributation
 
-**Note** The `ros_control` controllers for the real arm are not yet implemented and will be in a future release of `ros_kortex`.
+Thanks is given to the developers of https://github.com/Kinovarobotics/ros_kortex as it was key to this work.
 
-### kortex_description
-This package contains the URDF (Unified Robot Description Format), STL and configuration files for the Kortex-compatible robots. For more details, please consult the [README](kortex_description/readme.md) from the package subdirectory.
-
-### kortex_driver
-This package implements a ROS node that allows communication between a node and a Kinova Gen3 or Gen3 lite robot. For more details, please consult the [README](kortex_driver/readme.md) from the package subdirectory.
-
-### kortex_examples
-This package holds all the examples needed to understand the basics of `ros_kortex`. Most of the examples are written in both C++ and Python. Only the MoveIt! example is available exclusively in Python for now.
-A more detailed [description](kortex_examples/readme.md) can be found in the package subdirectory.
-
-### kortex_gazebo
-This package contains files to simulate the Kinova Gen3 and Gen3 lite robots in Gazebo. For more details, please consult the [README](kortex_gazebo/readme.md) from the package subdirectory.
-
-### kortex_move_it_config
-This metapackage contains the auto-generated MoveIt! files to use the Kinova Gen3 and Gen3 lite arms with the MoveIt! motion planning framework. For more details, please consult the [README](kortex_move_it_config/readme.md) from the package subdirectory.
-
-### third_party
-This folder contains the third-party packages we use with the ROS Kortex packages. Currently, it consists of two packages used for the simulation of the Robotiq Gripper in Gazebo. We use [gazebo-pkgs](third_party/gazebo-pkgs/README.md) for grasping support in Gazebo and [roboticsgroup_gazebo_plugins](third_party/roboticsgroup_gazebo_plugins/README.md) to mimic joint support in Gazebo.
