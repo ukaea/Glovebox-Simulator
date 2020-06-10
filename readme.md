@@ -23,8 +23,8 @@ This includes:
 
 - [Robot Operating System (ROS)](http://wiki.ros.org) (middleware for robotics)
 
-This package has been tested under ROS Kinetic (Ubuntu 16.04) and ROS Melodic (Ubuntu 18.04).
-You can find the instructions to install ROS Kinetic [here](http://wiki.ros.org/kinetic/Installation/Ubuntu) and ROS Melodic [here](http://wiki.ros.org/melodic/Installation/Ubuntu).
+This package has been tested under ROS Melodic (Ubuntu 18.04).
+You can find the instructions to install ROS Melodic [here](http://wiki.ros.org/melodic/Installation/Ubuntu).
 
 
 ### Build
@@ -51,6 +51,14 @@ As you see, there are instructions to install the Conan package manager. You can
 The [spawn_kortex_robot.launch file](launch/spawn_kortex_robot.launch) launches the arm simulation in [Gazebo](http://gazebosim.org), with [ros_control](http://wiki.ros.org/ros_control) controllers and optionally [MoveIt!](https://moveit.ros.org/).
 The launch can be parametrized with arguments : 
 
+To launch it with default arguments, run the following command in a terminal : 
+
+`roslaunch kortex_gazebo spawn.launch gripper:="robotiq_2f_85"`
+
+To launch it with optional arguments, specify the argument name, then ":=", then the value you want. For example, : 
+
+`roslaunch kortex_gazebo spawn.launch start_rviz:=false use_trajectory_controller:=false`
+
 **Arguments**:
 - **start_gazebo** : If this argument is false, Gazebo will not be launched within this launched file. It is useful if you already launched Gazebo yourself and just want to spawn the robot. The default value is **true** (Gazebo will be started).
 - **gazebo_gui** : If this argument is false, only the Gazebo Server will be launched. The default value is **true**.
@@ -60,14 +68,6 @@ The launch can be parametrized with arguments :
 - **use_sim_time** : If this value is true, Gazebo will use simulated time instead of system clock. The default value is **true**.
 - **debug** : If this value is true, Gazebo will be launched in debug mode. This option is useful for debugging Gazebo-related issues that won't show in the terminal. The default value is **false**.
 - **paused** : If this value is true, Gazebo will be started paused. The default value is **$(arg use_trajectory_controller)** because, when MoveIt! is enabled, Gazebo needs to be started paused to let the controllers initialize.
-
-To launch it with default arguments, run the following command in a terminal : 
-
-`roslaunch kortex_gazebo spawn.launch`
-
-To launch it with optional arguments, specify the argument name, then ":=", then the value you want. For example, : 
-
-`roslaunch kortex_gazebo spawn.launch start_rviz:=false use_trajectory_controller:=false`
 
 
 
