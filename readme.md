@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A [glovebox](https://en.wikipedia.org/wiki/Glovebox)is a sealed container that is designed to allow manipulation of objects where a separation from the object is desired. Built into the sides of the glovebox are gloves arranged in such a way that the user can place their hands into the gloves and perform tasks inside the box without breaking containment. Part or all of the box is usually transparent to allow the user to see what is being manipulated. Two types of gloveboxes exist. The first allows a person to work with hazardous substances, such as radioactive materials or infectious disease agents, and the second allows manipulation of substances that must be contained within a very high purity inert atmosphere, such as argon or nitrogen. 
+A [glovebox](https://en.wikipedia.org/wiki/Glovebox) is a sealed container that is designed to allow manipulation of objects where a separation from the object is desired. Built into the sides of the glovebox are gloves arranged in such a way that the user can place their hands into the gloves and perform tasks inside the box without breaking containment. Part or all of the box is usually transparent to allow the user to see what is being manipulated. Two types of gloveboxes exist. The first allows a person to work with hazardous substances, such as radioactive materials or infectious disease agents, and the second allows manipulation of substances that must be contained within a very high purity inert atmosphere, such as argon or nitrogen. 
 
 One of the biggest risks to operates is the gloves breaking. In order to derisk human-like robots could be used to replace the direct arms in the glovebox.
 This can be through tele-operation or through autonomy.
