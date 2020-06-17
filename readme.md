@@ -74,8 +74,25 @@ To launch it with optional arguments, specify the argument name, then ":=", then
 - **paused** : If this value is true, Gazebo will be started paused. The default value is **$(arg use_trajectory_controller)** because, when MoveIt! is enabled, Gazebo needs to be started paused to let the controllers initialize.
 
 
-
 ## Attributation
 
 Thanks is given to the developers of https://github.com/Kinovarobotics/ros_kortex as it was key to this work.
 
+## How to Cite
+
+```latex
+@misc{lia_corrales_2015_15991,
+    author       = {Guy Burroughes},
+    title        = {{Glovebox Robotics Simulator}},
+    month        = Jun,
+    year         = 2020,
+    doi          = {10.5281/zenodo.3898208 },
+    version      = {1.0},
+    publisher    = {Zenodo},
+    url          = {https://github.com/ukaea/Glovebox-Simulator}
+    }
+```
+or you can get the bibtex by:
+```bash
+curl -LH "Accept: application/x-bibtex" https://doi.org/10.5281/3898208
+```
