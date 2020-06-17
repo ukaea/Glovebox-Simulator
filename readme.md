@@ -1,5 +1,9 @@
 # Glovebox simulator
 
+
+[![DOI](https://zenodo.org/badge/270940490.svg)](https://zenodo.org/badge/latestdoi/270940490)
+
+
 ## Introduction
 
 A [glovebox](https://en.wikipedia.org/wiki/Glovebox) is a sealed container that is designed to allow manipulation of objects where a separation from the object is desired. Built into the sides of the glovebox are gloves arranged in such a way that the user can place their hands into the gloves and perform tasks inside the box without breaking containment. Part or all of the box is usually transparent to allow the user to see what is being manipulated. Two types of gloveboxes exist. The first allows a person to work with hazardous substances, such as radioactive materials or infectious disease agents, and the second allows manipulation of substances that must be contained within a very high purity inert atmosphere, such as argon or nitrogen. 
