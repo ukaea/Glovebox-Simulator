@@ -17,7 +17,8 @@ class GazeboControl(object):
         This constructor initialises the different necessary connections to the topics and services
         and resets the world to start in a good position.
         """
-        rospy.init_node("gazebo_control")
+        if not rospy.get_name()==None:
+            rospy.init_node("gazebo_control")
 
 
         rospy.wait_for_service("/gazebo/get_model_state", 10.0)

@@ -36,6 +36,171 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
+
+   <model name='coke_can'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0.06 0 -0 0</pose>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00055575</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00055575</iyy>
+            <iyz>0</iyz>
+            <izz>0.0001755</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0.003937 0.004724 -0.18 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://coke_can/meshes/coke_can.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+                <max_vel>0.1</max_vel>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0.003937 0.004724 -0.18 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://coke_can/meshes/coke_can.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.709536 0.821848 0 0 -0 0</pose>
+    </model>
+
+
+  <model name='round_tin_base'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0.014085 0 -0 0</pose>
+          <mass>0.0223</mass>
+          <inertia>
+            <ixx>1.93147e-05</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1.93147e-05</iyy>
+            <iyz>0</iyz>
+            <izz>3.568e-05</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision_cylinder'>
+          <pose frame=''>0 0 0.001 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.04</radius>
+              <length>0.002</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <contact>
+              <poissons_ratio>0.36</poissons_ratio>
+              <elastic_modulus>5e+10</elastic_modulus>
+              <ode>
+                <kp>100000</kp>
+                <kd>100</kd>
+                <max_vel>100</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <torsional>
+                <coefficient>1</coefficient>
+                <use_patch_radius>0</use_patch_radius>
+                <surface_radius>0.01</surface_radius>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual_cylinder'>
+          <pose frame=''>0 0 0.001 0 -0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.04</radius>
+              <length>0.002</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <collision name='collision_mesh'>
+          <pose frame=''>0 0 0.001 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://round_tin_base/meshes/round_tin_base.dae</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <max_vel>0.1</max_vel>
+                <min_depth>0.0001</min_depth>
+              </ode>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual_mesh'>
+          <pose frame=''>0 0 0.001 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://round_tin_base/meshes/round_tin_base.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>-0.60954 1.11803 0 0 -0 0</pose>
+    </model>
     <model name='drill'>
       <link name='link'>
         <inertial>
@@ -330,6 +495,24 @@
           <wrench>-0.399155 0.120353 -0.001171 0 -0 0</wrench>
         </link>
       </model>
+      <model name='round_tin_base'>
+        <pose frame=''>-0.615778 0.81859 1.0 0.0 0.0 0.0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.615778 0.81859 1.0 0.0 0.0 0.0</pose>
+        </link>
+      </model>
+      <model name='coke_can'>
+        <pose frame=''>-0.716003 0.774219 1 0.002268 -0.042174 -0.247484</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-0.716003 0.774219 1 0.002268 -0.042174 -0.247484</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>-1.3e-05 -1.6e-05 -1e-06 0.000288 -0.000225 -2.4e-05</acceleration>
+          <wrench>-5e-06 -6e-06 -1e-06 0 -0 0</wrench>
+        </link>
+      </model>
+
       <light name='directional_light'>
         <pose frame=''>0 0 3 0 -0 0</pose>
       </light>
@@ -339,7 +522,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>3.12753 -1.41682 1.86723 0 0.279643 2.50817</pose>
+        <pose frame=''>3.127 -1.416 1.867 0 0.2796 2.508</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
