@@ -21,7 +21,16 @@ This includes:
 
 <img src="doc/rviz.PNG"  width="450" >
 
+## Getting Started
+
+There are 2 main interaction methods:
+
+* Install the software locally 
+* Or use a docker container and web interfaces (https://github.com/ukaea/Glovebox-Simulator-Docker)
+
 ## Installation
+
+This section will focus on the local install process.
 
 ### Setup
 
