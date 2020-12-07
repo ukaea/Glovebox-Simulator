@@ -13,18 +13,12 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_knuckle.stl" scale="0.000001 0.000001 0.000001"/>
         </geometry>
         <material name="">
           <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
         </material>
       </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_outer_knuckle.dae" scale="0.001 0.001 0.001"/>
-        </geometry>
-      </collision>
     </link>
   </xacro:macro>
 
@@ -38,7 +32,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_outer_finger.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="">
           <color rgba="0.1 0.1 0.1 1" />
@@ -47,8 +41,11 @@
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_outer_finger.dae" scale="0.001 0.001 0.001"/>
+           <box size="0.022 0.00635 0.0375"/>
         </geometry>
+        <material name="">
+          <color rgba="0.9 0.0 1.0 1" />
+        </material>
       </collision>
     </link>
   </xacro:macro>
@@ -63,18 +60,12 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_knuckle.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="">
           <color rgba="0.1 0.1 0.1 1" />
         </material>
       </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_inner_knuckle.dae" scale="0.001 0.001 0.001"/>
-        </geometry>
-      </collision>
     </link>
   </xacro:macro>
 
@@ -88,18 +79,12 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/visual/robotiq_arg2f_85_inner_finger.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="">
           <color rgba="0.1 0.1 0.1 1" />
         </material>
       </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <geometry>
-          <mesh filename="package://kortex_description/grippers/robotiq_2f_85/meshes/collision/robotiq_arg2f_85_inner_finger.dae" scale="0.001 0.001 0.001" />
-        </geometry>
-      </collision>
     </link>
   </xacro:macro>
 
