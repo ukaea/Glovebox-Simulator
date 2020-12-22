@@ -4,6 +4,8 @@
 
   <!-- Propagate last link name information because it is the gripper's parent link -->
   <xacro:property name="last_arm_link" value="end_effector_link"/>
+  <!-- Propagate wrist arm link name information because it is the cameras's parent link -->
+  <xacro:property name="camera_arm_link" value="bracelet_link"/>
 
   <xacro:macro name="load_arm" params="parent:='' dof vision prefix *origin">
       <link name="${prefix}base_link">
