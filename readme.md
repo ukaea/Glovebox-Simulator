@@ -21,7 +21,16 @@ This includes:
 
 <img src="doc/rviz.PNG"  width="450" >
 
+## Getting Started
+
+There are 2 main interaction methods:
+
+* Install the software locally 
+* Or use a docker container and web interfaces (https://github.com/ukaea/Glovebox-Simulator-Docker)
+
 ## Installation
+
+This section will focus on the local install process.
 
 ### Setup
 
@@ -73,6 +82,12 @@ To launch it with optional arguments, specify the argument name, then ":=", then
 - **debug** : If this value is true, Gazebo will be launched in debug mode. This option is useful for debugging Gazebo-related issues that won't show in the terminal. The default value is **false**.
 - **paused** : If this value is true, Gazebo will be started paused. The default value is **$(arg use_trajectory_controller)** because, when MoveIt! is enabled, Gazebo needs to be started paused to let the controllers initialize.
 
+## Notebooks and Tutorials
+
+Python notebooks are kept in: glovebox_control/notebooks
+
+* Joint Control - Control individual joints - Jupyter and jupyros required  
+* MoveIt - Control the robot through move it.
 
 ## Attributation
 
